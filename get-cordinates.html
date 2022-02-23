@@ -6,8 +6,28 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>get box's cordinates</title>
     <script src="action.js" defer></script>
+    <style>
+        .container {
+            display: flex;
+            position: sticky;
+            top: 10px;
+            flex-direction: row-reverse;
+
+        }
+        button {
+            margin-left: 0.5em;
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <button type="button" class="button_by100px">scroll by 100px</button>
+        <button type="button" class="button_to100px">scroll to 100px</button>
+        <button type="button" class="button_intoPoint">scroll into red point</button>
+    </div>
+
     <div class="parentElement"></div>
+
+
 </body>
 </html>
