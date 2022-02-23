@@ -24,7 +24,7 @@ let selectedEl = document.querySelector(".childElement7");
 selectedEl.style.backgroundColor = "#FB3F21 ";
 
 // 마우스 이벤트를 사용하여 좌표 값 얻기
-
+// getCordinate 이벤트 핸들러에 'e' 이벤트 객체를 인수로 전달
 function getCordinate(e) {
   e.preventDefault();
   console.log(selectedEl.getBoundingClientRect());
@@ -41,3 +41,25 @@ function getCordinate(e) {
 }
 
 selectedEl.addEventListener("click", getCordinate);
+
+// scroll 이동 버튼 추가
+
+let button = document.querySelectorAll("button");
+let by100btn = document.querySelector(".button_by100px");
+let to100btn = document.querySelector(".button_to100px");
+let intoPointBtn = document.querySelector(".button_intoPoint");
+
+//버튼 click 이벤트 발생 시 실행되는 함수
+
+button.forEach((item) =>
+  item.addEventListener("click", function (e) {
+    e.preventDefault();
+    if (event.target === by100btn) {
+      window.scrollBy(0, 100);
+    } else if (event.target === intoPointBtn) {
+      window.scrollTo(0, 1005);
+    } else if (event.target === to100btn) {
+      window.scrollTo(0, 100);
+    }
+  })
+);
